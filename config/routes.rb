@@ -1,6 +1,6 @@
 Keijiban::Application.routes.draw do
   resources :boards do
-    resources :comments
+    resources :comments, except: [:index, :new, :show]
   end
 
   # The priority is based upon order of creation:
