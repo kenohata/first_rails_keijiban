@@ -11,10 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109170401) do
+ActiveRecord::Schema.define(:version => 20130109174507) do
 
   create_table "boards", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "board_id",   :null => false
+    t.text     "content",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
